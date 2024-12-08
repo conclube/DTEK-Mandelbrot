@@ -3,6 +3,13 @@ extern void print_dec(unsigned int);
 extern void print_hex32(unsigned int);
 extern void printc(char);
 
+// memcpy if compiler flags -O0 requires it
+void *memcpy(void *dest, const void *src, unsigned n) {
+    for (unsigned i = 0; i < n; i++) {
+        ((char*)dest)[i] = ((char*)src)[i];
+    }
+}
+
 struct datakey {
   int* ptr;
   char type;
@@ -145,7 +152,10 @@ void println(const char* s) {
 }
 
 void print_long(unsigned long long s) {
-  print_dec((unsigned int) (s >> 32));
+  unsigned int msb = (unsigned int) (s >> 32);
+  if (msb != 0) {
+    print_dec(msb);
+  }
   print_dec((unsigned int) 0xffffffff & s);
 }
 
@@ -257,9 +267,9 @@ void read_counters() {
   asm ("csrr %0, mhpmcounter8" : "=r"(mhpmcounter8));
   asm ("csrr %0, mhpmcounter9h" : "=r"(mhpmcounter9h));
   asm ("csrr %0, mhpmcounter9" : "=r"(mhpmcounter9));
-  print("mcycle=");
+  print("mcycle     =");
   println_long((((unsigned long long)mcycleh) << 32) | mcycle);
-  print("minstret=");
+  print("minstret   =");
   println_long((((unsigned long long)minstreth) << 32) | minstret);
   print("mhpmcounter3=");
   println_long((((unsigned long long)mhpmcounter3h) << 32) | mhpmcounter3);
