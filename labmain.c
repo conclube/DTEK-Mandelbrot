@@ -267,9 +267,9 @@ void read_counters() {
   asm ("csrr %0, mhpmcounter8" : "=r"(mhpmcounter8));
   asm ("csrr %0, mhpmcounter9h" : "=r"(mhpmcounter9h));
   asm ("csrr %0, mhpmcounter9" : "=r"(mhpmcounter9));
-  print("mcycle     =");
+  print("mcycle      =");
   println_long((((unsigned long long)mcycleh) << 32) | mcycle);
-  print("minstret   =");
+  print("minstret    =");
   println_long((((unsigned long long)minstreth) << 32) | minstret);
   print("mhpmcounter3=");
   println_long((((unsigned long long)mhpmcounter3h) << 32) | mhpmcounter3);
