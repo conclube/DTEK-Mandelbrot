@@ -1,8 +1,10 @@
 # DTEK-Mandelbrot
 
-### Authors
+## Authors
 - Alexander Lorentzson (lorentzs@kth.se)
 - Filip de Meyere (filipdm@kth.se)
+
+This project also uses the `time4risc.zip` on canvas as a base template authored by Artur Podobas. 
 
 ## Configuration
 
