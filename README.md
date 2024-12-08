@@ -1,4 +1,5 @@
 # DTEK-Mandelbrot
+Advanced Project - Group 37
 
 ## Authors
 - Alexander Lorentzson (lorentzs@kth.se)
