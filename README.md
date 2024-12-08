@@ -1,12 +1,40 @@
 # DTEK-Mandelbrot
 
-## Authors
+### Authors
 - Alexander Lorentzson (lorentzs@kth.se)
 - Filip de Meyere (filipdm@kth.se)
 
-### Configuration
+## Configuration
 
-### Description
+#### Constraints
+- Resolution can only be 64, 128 and 256.
+- There are only three types of fractals M (mandelbrot), J (julia), S (sierpinski).
+
+#### Formats
+- `M;xmax;xmin;ymax;ymin;resolution`
+  - `xmax` - double
+  - `xmin` - double
+  - `ymax` - double
+  - `ymin` - double
+  - `resolution` - int 
+ 
+- `J`
+  - `xmax` - double
+  - `xmin` - double
+  - `ymax` - double
+  - `ymin` - double
+  - `real` - double
+  - `imag` - double
+  - `resolution` - int 
+
+- `S;`
+  - Unimplemented :c
+
+#### Example
+
+
+
+## Description
 This project implements a simple fractal image generation implementation of mandelbrot sets, julia sets and sierpinski triangles.
 Presently, only mandelbrot sets and julia sets are supported. (Running sierpinski will yield unimplemented errors.)
 
@@ -26,7 +54,7 @@ Mandelbrot sets are defined with the recursive definition z_n = z_n-1 + c with t
 
 We color the pixel depending on how quickly it diverges.
 
-### Terminal Commands
+## Terminal Commands
 - `module add dtekv` add dtekv toolchain.
 - `module add riscv-gcc` add compiler.
 - `jtagd --user-start` boot up the jtagd server that allows for communication between the computer and the chip.
@@ -35,7 +63,7 @@ We color the pixel depending on how quickly it diverges.
 - `make` compile the program binaries.
 - `dtekv-run main.bin` runs the program, if the program is already running then this will resue the program terminal (if you stepped out of it via C^).
 
-### How to Run
+## How to Run
 1. Add required modules.
 2. Compile the program.
 3. Start the JTAGD server.
