@@ -11,14 +11,14 @@
 - There are only three types of fractals M (mandelbrot), J (julia), S (sierpinski).
 
 #### Formats
-- `M;xmax;xmin;ymax;ymin;resolution`
+- `M;xmax;xmin;ymax;ymin;resolution;`
   - `xmax` - double
   - `xmin` - double
   - `ymax` - double
   - `ymin` - double
   - `resolution` - int 
  
-- `J`
+- `J;xmax;xmin;ymax;ymin;real;imag;resolution;`
   - `xmax` - double
   - `xmin` - double
   - `ymax` - double
@@ -29,9 +29,21 @@
 
 - `S;`
   - Unimplemented :c
+ 
+- `#`
+  - Terminate configuration.
 
 #### Example
+```
+M;1;-1;1;-1;256;
+M;1;-1;1;-1;128;
+M;1;-1;1;-1;64;
+J;2;-2;2;-2;0.45;0.1428;256;
+S;
+#
+```
 
+Here the julia fractal would correspond to switch 3 for example.
 
 
 ## Description
