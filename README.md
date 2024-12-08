@@ -73,7 +73,7 @@ We color the pixel depending on how quickly it diverges.
 - `dtekv-upload config.txt 0x200000` upload the default config to the chip at memory address 0x200000.
 - `dtekv-download image.ppm 0x250000 <size>` download the image to image.ppm on the computer from the chip at memory address 0x250000, the size should be written in HEX prefixed with **0x**.
 - `make` compile the program binaries.
-- `dtekv-run main.bin` runs the program, if the program is already running then this will resue the program terminal (if you stepped out of it via C^).
+- `dtekv-run main.bin` runs the program, if the program is already running then this will resume the program terminal (if you stepped out of it via C^).
 
 ## How to Run
 1. Add required modules.
